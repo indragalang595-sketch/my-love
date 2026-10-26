@@ -1,0 +1,89 @@
+/* ============================================
+   BASE — warna, font, dan elemen yang dipakai
+   di kedua halaman
+   ============================================ */
+:root {
+  --pink-50:  #fff5f9;
+  --pink-100: #ffe4ef;
+  --pink-200: #ffc9de;
+  --pink-300: #ffa6c9;
+  --pink-400: #ff7eb3;
+  --pink-500: #ff4d94;
+  --pink-600: #e0307a;
+  --berry:    #b3205f;
+  --cream:    #fff9f0;
+  --lilac:    #e9d5ff;
+  --peach:    #ffd8c2;
+  --yellow:   #ffe58f;
+  --text:     #7a2150;
+
+  --font-body: 'Fredoka', 'Quicksand', 'Comic Sans MS', system-ui, sans-serif;
+  --font-script: 'Pacifico', 'Brush Script MT', cursive;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 15% 20%, #ffd1e6 0, transparent 40%),
+    radial-gradient(circle at 85% 15%, #ffe3f1 0, transparent 40%),
+    radial-gradient(circle at 70% 90%, #f9d3ff 0, transparent 45%),
+    radial-gradient(circle at 10% 85%, #ffd9c9 0, transparent 40%),
+    linear-gradient(160deg, #ffe9f3, #ffc7de);
+  background-attachment: fixed;
+}
+
+/* Pola polkadot halus */
+body::before {
+  content: "";
+  position: fixed; inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,.55) 2px, transparent 2.5px);
+  background-size: 34px 34px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---------- Hati melayang di latar ---------- */
+.hearts-bg {
+  position: fixed; inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+.float-heart {
+  position: absolute;
+  bottom: -60px;
+  opacity: 0;
+  animation: floatUp linear forwards;
+  filter: drop-shadow(0 4px 6px rgba(224, 48, 122, .25));
+  user-select: none;
+}
+@keyframes floatUp {
+  0%   { transform: translateY(0) translateX(0) rotate(0deg) scale(.6); opacity: 0; }
+  10%  { opacity: .9; }
+  50%  { transform: translateY(-55vh) translateX(25px) rotate(15deg) scale(1); }
+  100% { transform: translateY(-115vh) translateX(-20px) rotate(-15deg) scale(1.1); opacity: 0; }
+}
+
+/* ---------- Transisi antar halaman ---------- */
+.page-fade {
+  position: fixed; inset: 0;
+  background: radial-gradient(circle, #fff 0%, var(--pink-200) 100%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+  transition: opacity .9s ease;
+}
+.page-fade.show { opacity: 1; pointer-events: all; }
+
+/* Aksesibilitas: kurangi animasi bila diminta */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

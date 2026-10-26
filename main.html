@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selamat Ulang Tahun, Sayang! 🎂</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="page-main">
+
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <div class="hearts-bg" id="heartsBg" aria-hidden="true"></div>
+  <div class="balloons" id="balloons" aria-hidden="true"></div>
+
+  <!-- Tombol musik -->
+  <button class="music-btn" id="musicBtn" type="button" aria-label="Putar / jeda musik">🎵</button>
+  <div class="music-toast" id="musicToast">Ketuk di mana saja untuk memutar musik 🎶</div>
+  <audio id="bgm" src="assets/audio/backsound.mp3" loop preload="auto"></audio>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero section">
+    <div class="garland" aria-hidden="true">
+      <span>🎀</span><span>💗</span><span>🎀</span><span>💗</span><span>🎀</span><span>💗</span><span>🎀</span>
+    </div>
+
+    <p class="hero-small pop-in">✨ hari spesial seseorang yang kusayang ✨</p>
+
+    <h1 class="hero-title" id="heroTitle" aria-label="Happy Birthday">Happy Birthday</h1>
+
+    <div class="photo-ring pop-in delay-2">
+      <div class="ring-spin"></div>
+      <img src="assets/img/foto1.jpg" alt="Foto Safa" class="hero-photo">
+      <span class="ring-deco d1">🌸</span>
+      <span class="ring-deco d2">💖</span>
+      <span class="ring-deco d3">✨</span>
+      <span class="ring-deco d4">🎀</span>
+    </div>
+
+    <h2 class="hero-name pop-in delay-3">Safa Azahra</h2>
+    <p class="hero-sub pop-in delay-4">Sayangku, cintaku, duniaku 💕</p>
+
+    <a href="#kue" class="scroll-hint" aria-label="Gulir ke bawah">
+      <span>geser ke bawah</span>
+      <i>⌄</i>
+    </a>
+  </header>
+
+  <!-- ===== KUE ===== -->
+  <section class="cake-section section reveal" id="kue">
+    <h3 class="section-title">Make a wish! 🌟</h3>
+    <p class="section-desc">Ketuk lilinnya untuk meniupnya, lalu ucapkan harapanmu...</p>
+
+    <button class="cake" id="cake" type="button" aria-label="Tiup lilin">
+      <div class="candles">
+        <div class="candle c1"><div class="flame"></div></div>
+        <div class="candle c2"><div class="flame"></div></div>
+        <div class="candle c3"><div class="flame"></div></div>
+      </div>
+      <div class="layer top"><i class="drip"></i></div>
+      <div class="layer mid"><i class="drip"></i></div>
+      <div class="layer bot"></div>
+      <div class="plate"></div>
+    </button>
+    <p class="wish-text" id="wishText"></p>
+  </section>
+
+  <!-- ===== UCAPAN ===== -->
+  <section class="letter-section section reveal" id="ucapan">
+    <div class="letter-card">
+      <span class="tape t1"></span><span class="tape t2"></span>
+      <h3 class="letter-title">Untuk Safa Azahra 💌</h3>
+      <div class="typed" id="typed" aria-live="polite"></div>
+      <p class="letter-from">Dengan seluruh cinta,<br><span>pacarmu yang paling sayang kamu 💗</span></p>
+    </div>
+  </section>
+
+  <!-- ===== GALERI ===== -->
+  <section class="gallery-section section reveal" id="galeri">
+    <h3 class="section-title">Kenangan Manis Kita 📸</h3>
+    <p class="section-desc">Setiap fotomu selalu bikin hariku lebih cerah</p>
+    <div class="gallery" id="gallery"></div>
+  </section>
+
+  <!-- ===== ALASAN ===== -->
+  <section class="reasons-section section reveal" id="alasan">
+    <h3 class="section-title">Kenapa Aku Sayang Kamu 💖</h3>
+    <ul class="reasons" id="reasons"></ul>
+  </section>
+
+  <!-- ===== PENUTUP ===== -->
+  <footer class="finale section reveal">
+    <div class="big-heart" id="bigHeart" role="button" tabindex="0" aria-label="Kirim cinta">💗</div>
+    <p class="finale-text">Sekali lagi...</p>
+    <h3 class="finale-title">Selamat Ulang Tahun, Safa Sayang! 🎉</h3>
+    <p class="finale-sub">Semoga semua mimpimu jadi nyata. Aku selalu di sampingmu 🤍</p>
+    <button class="btn-party" id="partyBtn" type="button">🎊 Rayakan lagi!</button>
+    <p class="credit">dibuat dengan 💗 khusus untukmu</p>
+  </footer>
+
+  <!-- ===== KOLOM PESAN ===== -->
+  <section class="message-section section reveal" id="pesan">
+    <h3 class="section-title">Kirim Pesan Balasan 💌</h3>
+    <p class="section-desc">Tulis pesan, lalu kirim langsung lewat WhatsApp ya!</p>
+    <form class="msg-form" id="msgForm" autocomplete="off">
+      <label for="msgName">Nama kamu</label>
+      <input type="text" id="msgName" placeholder="Nama..." maxlength="40">
+      <label for="msgText">Pesanmu</label>
+      <textarea id="msgText" rows="5" placeholder="Tulis ucapan atau balasan manismu di sini... 💕" maxlength="600" required></textarea>
+      <button type="submit" class="btn-party btn-wa">📱 Kirim via WhatsApp</button>
+      <p class="msg-note" id="msgNote">Kamu akan diarahkan ke WhatsApp dengan pesan yang sudah terisi.</p>
+    </form>
+  </section>
+
+  <!-- Lightbox foto -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Tutup">✕</button>
+    <img id="lbImg" alt="">
+    <p id="lbCap"></p>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

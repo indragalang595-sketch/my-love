@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ada Surat Untukmu 💌</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/envelope.css">
+</head>
+<body class="page-envelope">
+
+  <!-- Hiasan latar: hati melayang -->
+  <div class="hearts-bg" id="heartsBg" aria-hidden="true"></div>
+
+  <main class="stage">
+    <h1 class="title">Hai, <span>Sayang</span> 💕</h1>
+    <p class="subtitle">Ada sesuatu yang spesial buat kamu...</p>
+
+    <!-- Amplop -->
+    <button class="envelope-wrap" id="envelope" type="button" aria-label="Buka amplop">
+      <div class="envelope">
+        <div class="env-back"></div>
+
+        <div class="letter">
+          <p class="letter-to">Untuk Safa Azahra 💗</p>
+          <p class="letter-text">Ada kejutan kecil<br>yang dibuat dengan penuh cinta...</p>
+          <p class="letter-sign">~ dari your boyfriend ~</p>
+        </div>
+
+        <div class="env-front left"></div>
+        <div class="env-front right"></div>
+        <div class="env-front bottom"></div>
+
+        <div class="flap">
+          <span class="seal">❤</span>
+        </div>
+      </div>
+      <span class="hint" id="hint">✨ Klik amplopnya ya ✨</span>
+    </button>
+
+    <p class="note">Pastikan volume aktif 🔊 supaya lebih romantis</p>
+  </main>
+
+  <!-- Kunci PIN -->
+  <div class="pin-overlay" id="pinOverlay" aria-hidden="true">
+    <div class="pin-card" id="pinCard" role="dialog" aria-modal="true" aria-labelledby="pinTitle">
+      <button class="pin-close" id="pinClose" type="button" aria-label="Tutup">✕</button>
+      <div class="pin-lock">🔐</div>
+      <h2 id="pinTitle">Masukkan PIN</h2>
+      <p class="pin-sub">Hanya kamu yang boleh membuka hadiah ini 💕</p>
+      <div class="pin-dots" id="pinDots" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+      <p class="pin-msg" id="pinMsg" role="alert"></p>
+      <div class="keypad" id="keypad">
+        <button type="button" data-k="1">1</button><button type="button" data-k="2">2</button><button type="button" data-k="3">3</button>
+        <button type="button" data-k="4">4</button><button type="button" data-k="5">5</button><button type="button" data-k="6">6</button>
+        <button type="button" data-k="7">7</button><button type="button" data-k="8">8</button><button type="button" data-k="9">9</button>
+        <button type="button" data-k="clear" class="alt" aria-label="Hapus semua">C</button>
+        <button type="button" data-k="0">0</button>
+        <button type="button" data-k="back" class="alt" aria-label="Hapus satu">⌫</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notifikasi salah PIN -->
+  <div class="toast-wrong" id="toastWrong" role="alert" aria-live="assertive">
+    <span class="tw-emoji">😜</span>
+    <p>haha coba tanya your bf buat buka gift nya</p>
+    <button type="button" id="toastOk">Oke deh 🙈</button>
+  </div>
+
+  <div class="page-fade" id="pageFade"></div>
+
+  <script src="js/envelope.js"></script>
+</body>
+</html>
